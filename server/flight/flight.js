@@ -7,6 +7,7 @@ client.config('control:altitude_max', 3000); // mm
 client.on('navdata', function(info) {
   drone_state = info.demo;
 });
+var lastCommand = {};
 
 module.exports = {
 
@@ -17,6 +18,12 @@ module.exports = {
     var up = obj.up || 0;
     var start = obj.start || false;
     var stop = obj.stop || false;
+
+    var deltaPitch = 0;
+
+    if (lastCommand && lastCommand.pitch) {
+      pitch =  pitch - lastCommand.pitch;
+    }
 
     console.log('flight got command:', roll, pitch, yaw, up);
 
@@ -52,6 +59,8 @@ module.exports = {
         client.left(Math.abs(roll));
       }
     }
+
+    lastCommand = obj;
   },
 
     // Returns current drone state
