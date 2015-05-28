@@ -26,7 +26,7 @@ module.exports = function(app) {
 
     console.log(req.body);
 
-    flight.command(req.body);
+    flight.command(command);
     console.log(command);
     res.sendStatus(200);
   });
