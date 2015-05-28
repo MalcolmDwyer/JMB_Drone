@@ -2,7 +2,6 @@ var flight = require('../flight/flight.js');
 
 module.exports = function(app) {
   app.post('/api/fly', function(req, res) {
-
     var command = {
       start: false,
       stop: false,
@@ -14,7 +13,7 @@ module.exports = function(app) {
 
     flight.command(command);
     console.log(command);
-    res.sendStatus(200)
+    res.sendStatus(200);
   });
 
 

@@ -4,6 +4,10 @@ var arDrone = require('ar-drone'),
 
 client.config('control:altitude_max', 3000); // mm
 
+client.on('navdata', function(info) {
+  drone_state = info.demo;
+});
+
 module.exports = {
 
   command: function(obj) {
@@ -15,11 +19,13 @@ module.exports = {
     var stop = obj.stop || false;
 
     console.log('flight got command:', roll, pitch, yaw, up);
+    console.log(drone_state);
 
     if (start === true) {
       if (drone_state.controlState == 'CTRL_LANDED') {
+        console.log('starting drone');
         client.takeoff();
-      }
+     }
     }
 
     if (stop === true) {
