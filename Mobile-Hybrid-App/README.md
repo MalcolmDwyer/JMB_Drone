@@ -11,4 +11,9 @@
 ###Getting Started
 - ``` cd Mobile-Hybrid-App ```
 - ``` npm install ```
+- ``` ionic add platform ios ```
+- ``` ionic build ios ```
 - ``` ionic serve ```
+- ``` ionic upload ```
+
+*** App MUST be installed on a iOS device for data to be captured. Otherwise the app is useless ***
