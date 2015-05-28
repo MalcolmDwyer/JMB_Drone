@@ -1,0 +1,8 @@
+.flightControls {
+  display: flex;
+  flex-direction: row;
+}
+
+.flightControls > * {
+  margin: 10px 10px;
+}

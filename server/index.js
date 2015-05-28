@@ -11,9 +11,11 @@ app.set('views', './web/views');
 
 app.get('/', function(req, res) {
   // res.send('Ready for commands');
-  res.render('index', {});
+  res.render('index', {
+    status: JSON.stringify(app.get('dronestate') || {})
+  });
 });
 
 app.listen(8888, function() {
   console.log('listening on 8888');
-})
+});
