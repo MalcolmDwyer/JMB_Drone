@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MalcolmDwyer/JMB_Drone",
+  "authors": [
+    "Malcolm Dwyer <malcolm.dwyer@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

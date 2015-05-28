@@ -1,5 +1,5 @@
 {
-  "name": "Malcolm",
+  "name": "DroneServer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "ar-drone": "^0.3.3",
-    "buffy": "0.0.5",
+    "bootstrap": "^3.3.4",
     "express": "^4.12.4",
-    "ws": "^0.7.2"
+    "jade": "^1.10.0"
   }
 }
