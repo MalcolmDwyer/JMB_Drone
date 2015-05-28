@@ -14,13 +14,20 @@ module.exports = {
     var start = obj.start || false;
     var stop = obj.stop || false;
 
+    console.log('flight got command:', roll, pitch, yaw, up);
+
     if (start === true) {
       if (drone_state.controlState == 'CTRL_LANDED') {
         client.takeoff();
       }
+    }
 
-      console.log('flight got command:', roll, pitch, yaw, up);
+    if (stop === true) {
+      client.stop();
+      client.land();
+    }
 
+    if (drone_state.controlState == 'CTRL_FLYING') {
       if (up >= 0) {
         client.up(up);
       } else {
@@ -38,11 +45,6 @@ module.exports = {
       } else {
         client.left(Math.abs(roll));
       }
-
-    } else {
-      client.stop();
-      client.land();
     }
-
   }
 };
