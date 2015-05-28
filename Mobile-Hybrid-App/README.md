@@ -16,4 +16,4 @@
 - ``` ionic serve ```
 - ``` ionic upload ```
 
-*** App MUST be installed on a iOS device for data to be captured. Otherwise the app is useless ***
+**App MUST be installed on a iOS device for data to be captured. Otherwise the app is useless**
