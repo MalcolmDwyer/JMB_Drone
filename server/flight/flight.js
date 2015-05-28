@@ -19,7 +19,6 @@ module.exports = {
     var stop = obj.stop || false;
 
     console.log('flight got command:', roll, pitch, yaw, up);
-    console.log(drone_state);
 
     if (start === true) {
       if (drone_state.controlState == 'CTRL_LANDED') {
@@ -52,5 +51,10 @@ module.exports = {
         client.left(Math.abs(roll));
       }
     }
+  },
+
+    // Returns current drone state
+  dronestate: function() {
+    return drone_state;
   }
 };

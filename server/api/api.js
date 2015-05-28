@@ -1,7 +1,9 @@
-var flight = require('../flight/flight.js');
+var flight = require('../flight/flight.js'),
+    bodyParser = require('body-parser'),
+    jsonParser = bodyParser.json();
 
 module.exports = function(app) {
-  app.post('/api/fly', function(req, res) {
+  app.post('/api/fly', jsonParser, function(req, res) {
     var command = {
       start: false,
       stop: false,
@@ -11,11 +13,12 @@ module.exports = function(app) {
       yaw: 0
     };
 
-    flight.command(command);
+    console.log(req.body);
+
+    flight.command(req.body);
     console.log(command);
     res.sendStatus(200);
   });
-
 
   app.post('/api/start', function(req, res) {
     flight.command({start: true});
@@ -23,5 +26,9 @@ module.exports = function(app) {
 
   app.post('/api/stop', function(req, res) {
     flight.command({stop: true});
+  });
+
+  app.get('/api/state', function(req, res) {
+    app.set('dronestate', flight.dronestate());
   });
 };
