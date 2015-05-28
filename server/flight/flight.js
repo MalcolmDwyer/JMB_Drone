@@ -23,7 +23,7 @@ module.exports = {
     }
 
     if (stop === true) {
-      client.stop(); vb
+      client.stop();
       client.land();
     }
 
