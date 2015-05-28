@@ -32,7 +32,8 @@ module.exports = {
       client.land();
     }
 
-    if (drone_state.controlState == 'CTRL_FLYING') {
+    if (drone_state.controlState != 'CTRL_LANDED') {
+      console.log('going up');
       if (up >= 0) {
         client.up(up);
       } else {
