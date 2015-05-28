@@ -23,7 +23,7 @@ module.exports = {
     }
 
     if (stop === true) {
-      client.stop();
+      client.stop(); vb
       client.land();
     }
 
@@ -35,9 +35,9 @@ module.exports = {
       }
 
       if (pitch >= 0) {
-        client.front(speed);
+        client.front(pitch);
       } else {
-        client.back(Math.abs(speed));
+        client.back(Math.abs(pitch));
       }
 
       if (roll >= 0) {
